@@ -19,7 +19,29 @@ public class Enemy extends LivingThing{
     public Enemy (String name, int maximumHP, int attack) {
         super (name,maximumHP , attack);
     }
-
+    @Override
+    public void attack(LivingThing target) {
+        int damage = (int) (Math.random() * getAttack());
+        double prob = Math.random();
+        if (prob < 0.3) {
+            damage = (damage * 2);
+            if (damage == 0) {
+                System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n", getName(), target.getName(), damage);
+            } else if (getDead() != true){
+                System.out.printf("%sの攻撃！痛恨の一撃！！%sに%dのダメージを与えた！！\n", getName(), target.getName(), damage);
+            target.wounded(damage);
+            }
+        }else{
+            if (damage == 0) {
+                System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n", getName(), target.getName(), damage);
+            } else {
+                if (getDead() != true) {
+                    System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), target.getName(), damage);
+                    target.wounded(damage);
+                }
+            }
+        }
+    }
     /**
      * getterメソッドと同等。生死をboolean表現しているためメソッド名をisDead()とした。
      * @return boolean

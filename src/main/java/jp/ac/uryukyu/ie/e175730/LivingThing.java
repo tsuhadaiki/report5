@@ -28,19 +28,26 @@ public class LivingThing {
     }
 
     public void setHitPoint(int hitPoint) {
+
         this.hitPoint = hitPoint;
     }
 
     public void setAttack(int attack) {
+
         this.attack = attack;
     }
 
     public void setDead(boolean dead) {
+
         this.dead= dead;
     }
 
     public int getAttack(){
         return attack;
+    }
+
+    public boolean getDead() {
+        return dead;
     }
 
     public void attack(LivingThing target) {
