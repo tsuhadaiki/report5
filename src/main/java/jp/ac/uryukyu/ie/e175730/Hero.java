@@ -19,7 +19,9 @@ public class Hero extends LivingThing {
         double prob = Math.random();
         if (prob < 0.4) {
             damage = (damage * 2);
-            if (getDead() != true) {
+            if (damage == 0) {
+                System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n", getName(), target.getName(), damage);
+            } else if (getDead() != true){
                 System.out.printf("%sの攻撃！会心の一撃！！%sに%dのダメージを与えた！！\n", getName(), target.getName(), damage);
                 target.wounded(damage);
             }
