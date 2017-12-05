@@ -1,7 +1,6 @@
 package jp.ac.uryukyu.ie.e175730;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 public class EnemyTest {
