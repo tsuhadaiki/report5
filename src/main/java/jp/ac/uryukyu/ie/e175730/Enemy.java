@@ -34,8 +34,7 @@ public class Enemy extends LivingThing{
         }else{
             if (damage == 0) {
                 System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n", getName(), target.getName(), damage);
-            } else {
-                if (getDead() != true) {
+            } else if (getDead() != true) {
                     System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), target.getName(), damage);
                     target.wounded(damage);
                 }
@@ -57,4 +56,3 @@ public class Enemy extends LivingThing{
      * 指定されたダメージを hitPoint から引き、死亡判定を行う。
      * @param damage 受けたダメージ
      */
-}
